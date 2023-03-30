@@ -17,18 +17,18 @@ public class PacMan {
 
   public ArrayList<Location> get_valid_moves() {
     ArrayList<Location> moves = new ArrayList<Location>();
-    Location up = this.myLoc.shift(0,-1);
-    Location down = this.myLoc.shift(0,1);
+    Location up = this.myLoc.shift(0,1);
+    Location down = this.myLoc.shift(0,-1);
     Location left = this.myLoc.shift(-1,0);
     Location right = this.myLoc.shift(1,0);
 
     if(!myMap.getLoc(up).contains(Map.Type.WALL)){
       moves.add(up);
     }
-    if(!myMap.getLoc(down).contains(Map.Type.WALL)){
+    if(!myMap.getLoc(down).contains(Map.Type.WALL) && down.y>=0){
       moves.add(down);
     }
-    if(!myMap.getLoc(left).contains(Map.Type.WALL)){
+    if(!myMap.getLoc(left).contains(Map.Type.WALL) && left.x>=0){
       moves.add(left);
     }
     if(!myMap.getLoc(right).contains(Map.Type.WALL)){
@@ -36,7 +36,7 @@ public class PacMan {
     }
   
     //return moves;
-    return null;
+    return moves;
   }
 
   public boolean move() {

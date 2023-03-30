@@ -71,7 +71,7 @@ public class Map {
     // use the setLocation method for the component to move it to the new location
     
     //return true;
-    return false;
+    return true;
   }
 
   public HashSet<Type> getLoc(Location loc) {
