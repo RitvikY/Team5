@@ -114,7 +114,7 @@ public class Map {
     if (getLoc(pacman).contains(Map.Type.COOKIE)) {
       this.cookies++;
       getLoc(pacman).remove(Map.Type.COOKIE);
-      return null;
+      return components.get(String.format("tok_x%d_y%d", pacman.x, pacman.y));
     } else {
       return null;
     }
